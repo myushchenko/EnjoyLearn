@@ -1,0 +1,124 @@
+﻿@using EnjoyLearn.Web.Helpers
+<div ng-controller="ProfileController">
+    <form name="form" ng-submit="submit()" novalidate>
+        @Html.ClientView("ModelErrors")
+        
+        <field-group for="firstName">
+        <label class="control-label" for="profile-first-name">First Name</label>
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span>
+            <input
+              id="profile-first-name"
+              name="firstName"
+              type="text"
+              ng-model="profile.FirstName"
+              ng-required="true"
+              autofocus />
+          </div>
+        </div>
+        <validation-message
+          for="firstName"
+          required="First Name is required." />
+      </field-group>
+        
+        <field-group for="lastName">
+            <label class="control-label" for="profile-last-name">Last Name</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input
+                        id="profile-last-name"
+                        name="lastName"
+                        type="text"
+                        ng-model="profile.LastName"
+                        ng-required="true"
+                        autofocus />
+                </div>
+            </div>
+            <validation-message
+                for="lastName"
+                required="Last Name is required." />
+        </field-group>
+        
+        <field-group for="email">
+            <label class="control-label" for="profile-email">Email</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input
+                        id="profile-email"
+                        name="email"
+                        type="email"
+                        ng-model="profile.Email"
+                        ng-required="true"
+                        autofocus />
+                </div>
+            </div>
+            <validation-message
+                for="email"
+                required="Email is required." />
+        </field-group>
+        
+        <field-group for="gender">
+            <label class="control-label" for="profile-gender">Gender</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input
+                        id="profile-gender"
+                        name="gender"
+                        type="text"
+                        ng-model="profile.Gender"
+                        ng-required="true"
+                        autofocus />
+                </div>
+            </div>
+            <validation-message
+                for="gender"
+                required="Gender is required." />
+        </field-group>
+           
+        <field-group for="mobile">
+            <label class="control-label" for="profile-mobile">Mobile</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input
+                        id="profile-mobile"
+                        name="mobile"
+                        type="text"
+                        ng-model="profile.Mobile"
+                        ng-required="true"
+                        autofocus />
+                </div>
+            </div>
+            <validation-message
+                for="mobile"
+                required="Mobile is required." />
+        </field-group>
+        
+        <field-group for="age">
+            <label class="control-label" for="profile-age">Age</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input
+                        id="profile-age"
+                        name="age"
+                        type="text"
+                        ng-model="profile.Age"
+                        ng-required="true"
+                        autofocus />
+                </div>
+            </div>
+            <validation-message
+                for="age"
+                required="Age is required." />
+        </field-group>
+
+        <div class="form-actions">
+            <submit-button>Save</submit-button>
+        </div>
+    </form>
+</div>

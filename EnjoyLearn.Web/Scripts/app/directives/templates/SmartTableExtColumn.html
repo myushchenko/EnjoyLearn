@@ -1,0 +1,15 @@
+<div ng-controller="SmartTableExtController">
+    
+    <button class="btn" ng-disabled="true"  ng-show="isAddOk" >
+        <i class="icon-ok"></i>
+    </button>
+    <button class="btn" ng-show="isAddToUserDictionary" ng-click="onAddToUserDictionary()">
+        <i class="icon-plus"></i>
+    </button>
+    <button class="btn" ng-show="isEditWord" ng-click="onEditWord()">
+        <i class="icon-edit"></i>
+    </button>
+    <button class="btn" ng-show="isDeletWord" ng-click="onDeleteWord()">
+        <i class="icon-trash"></i>
+    </button>
+</div>

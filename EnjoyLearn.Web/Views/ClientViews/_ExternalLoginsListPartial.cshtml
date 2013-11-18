@@ -1,0 +1,71 @@
+﻿@using EnjoyLearn.Models.Authorize
+@{
+    if (!WebSecurity.Initialized)
+    {
+        WebSecurity.InitializeDatabaseConnection(
+             "EnjoyLearnDB",
+             "Users",
+             "UserId",
+             "UserName",
+             autoCreateTables: true);
+    }
+
+    var newList = new List<AuthenticationClientData>();
+    if (User != null && !string.IsNullOrEmpty(User.Identity.Name))
+    {
+        ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
+        List<ExternalLoginModel> externalLogins = new List<ExternalLoginModel>();
+        foreach (OAuthAccount account in accounts)
+        {
+            AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
+
+            externalLogins.Add(new ExternalLoginModel
+            {
+                Provider = account.Provider,
+                ProviderDisplayName = clientData.DisplayName,
+                ProviderUserId = account.ProviderUserId,
+            });
+        }
+
+        var registeredClientData = OAuthWebSecurity.RegisteredClientData;
+        foreach (var authenticationClientData in registeredClientData)
+        {
+            var isExist = false;
+            foreach (var externalLoginExist in externalLogins)
+            {
+                if (externalLoginExist.Provider == authenticationClientData.AuthenticationClient.ProviderName)
+                {
+                    isExist = true;
+                }
+            }
+            if (!isExist)
+            {
+                newList.Add(authenticationClientData);
+            }
+        }
+    }
+    else
+    {
+        newList = OAuthWebSecurity.RegisteredClientData.ToList();
+    }
+}
+@if (newList.Count > 0)
+{
+
+    using (Html.BeginForm("ExternalLogin", "Home"))
+    {
+     @Html.AntiForgeryToken()
+     <fieldset id="socialLoginList">
+         <legend>Log in using another service</legend>
+         <div class="social_login">
+         <span class="social_logi-wrap" style="background: transparent">
+         @foreach (AuthenticationClientData p in newList)
+         {
+             <button class="btn @p.ExtraData["social"]" type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">
+             </button>
+         }
+         @*  </span>
+            </div>*@
+     </fieldset>
+    }
+}

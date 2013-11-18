@@ -1,0 +1,63 @@
+﻿@using EnjoyLearn.Web.Helpers
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    @Html.Partial("HeadPartial")
+    <title>@ViewBag.Title</title>
+</head>
+<body data-ng-cloak="" lang="{{lang}}">
+    @Html.Partial("LegacyIEPartial")
+    @Html.Partial("Flashbar")
+  <div class="main">
+    <header>
+      <div class="float-right" ng-controller="LanguageController" >
+        <ul class="nav nav-pills">
+          <li class="dropdown">
+            <a class="dropdown-toggle"
+               data-toggle="dropdown"
+               href="#"><span data-i18n="{{langTitle}}"></span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" ng-click="setEnglishLanguage()"><span data-i18n="_EnglishLanguage_"></span></a></li>
+              <li><a href="#" ng-click="setUkraineLanguage()"><span data-i18n="_UkraineLanguage_"></span></a></li>
+              <li><a href="#" ng-click="setRussianLanguage()"><span data-i18n="_RussianLanguage_"></span></a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+      <div id="logo">
+        <div class="float-right">
+           @Html.Partial("_UserPointsPartial")
+          <section class="login">
+            @Html.Partial("_LoginPartial")
+          </section>
+        </div>
+        <div>
+          <h2>
+            <p class="site-title">
+              <a href=@Url.ClientUrl("/")><span data-i18n="_ProjectTitle_"></span></a>
+            </p>
+          </h2>
+        </div>
+
+      </div>
+      @Html.Partial("NavigationPartial", false)
+    </header>
+    <!-- Main Content Container -->
+    <div class="main-content">
+      @RenderSection("featured", required: false)
+      <section class="content-wrapper main-content clear-fix">
+        @RenderBody()
+      </section>
+    </div>
+
+    <footer>
+      <p>Copyright &copy; @DateTime.Now.Year</p>
+    </footer>
+  </div>
+    @Html.Partial("ScriptsPartial")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

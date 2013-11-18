@@ -1,0 +1,62 @@
+﻿@model IEnumerable<NLog.Mvc.LogEntry>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>
+	Log Viewer</h2>
+<table border="1">
+	<tr>
+		<th>
+			Id
+		</th>
+		<th>
+			Timestamp
+		</th>
+		<th>
+			Level
+		</th>
+		<th>
+			Logger
+		</th>
+		<th>
+			Message
+		</th>
+		<th>
+			Exception Type
+		</th>
+		<th>
+			Operation
+		</th>
+		<th>
+			Exception Message
+		</th>
+		<th>
+			Stack Trace
+		</th>
+	</tr>
+	@foreach(var entry in Model)
+ {
+		<tr>
+			<td>@entry.Id
+			</td>
+			<td>@entry.TimeStamp
+			</td>
+			<td>@entry.Level
+			</td>
+			<td>@entry.Logger
+			</td>
+			<td>@entry.Message
+			</td>
+			<td>@entry.ExceptionType
+			</td>
+			<td>@entry.Operation
+			</td>
+			<td>@entry.ExceptionMessage
+			</td>
+			<td>@entry.StackTrace
+			</td>
+		</tr>
+ }
+</table>

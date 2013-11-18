@@ -1,0 +1,71 @@
+<div class="container" ng-controller="Game3Controller">
+    <h1>{{name}}</h1>
+    <div ng-show="!isShow">
+        <h3>Would you like to tranning words select corect variants?</h3>
+        <button type="submit" class="btn btn-primary" ng-click="onStart()" style="width: 300px;">
+            <span>Start Game</span>
+        </button>
+    </div>
+    <div ng-show="isShow">
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <table  style="width: 700px; height: 300px">
+            <tr>
+                <td align="center">
+                    <center>
+                        <ol class="trans-list">
+                            <li ng-repeat="word in wordsToLearnShow" style="height: 35px;">
+                                <div class="alert alert-{{word.color}}">
+                                <span>{{word.EnglishWord}}</span>
+                                  </div>
+                            </li>
+                        </ol>
+                       
+                    </center>
+                </td>
+
+                <td align="center">
+                    <ol class="trans-list">
+                        <li style="height: 35px;">
+                            <select ng-disabled="wordSelected1.isDisabled" ng-model="wordSelected1" ng-options="word as word.RussianWord for word in wordsToLearn">
+                                <option value="">- - Make Selection - -</option>
+                            </select>
+                        </li>
+                        <li style="height: 35px;">
+                            <select ng-disabled="wordSelected2.isDisabled" ng-model="wordSelected2" ng-options="word as word.RussianWord for word in wordsToLearn">
+                                <option value="">- - Make Selection - -</option>
+                            </select>
+                        </li>
+                        <li style="height: 35px;">
+                            <select ng-disabled="wordSelected3.isDisabled" ng-model="wordSelected3" ng-options="word as word.RussianWord for word in wordsToLearn">
+                                <option value="">- - Make Selection - -</option>
+                            </select>
+                        </li>
+                        <li style="height: 35px;">
+                            <select ng-disabled="wordSelected4.isDisabled" ng-model="wordSelected4" ng-options="word as word.RussianWord for word in wordsToLearn">
+                                <option value="">- - Make Selection - -</option>
+                            </select>
+                        </li>
+                        <li style="height: 35px;">
+                            <select ng-disabled="wordSelected5.isDisabled" ng-model="wordSelected5" ng-options="word as word.RussianWord for word in wordsToLearn">
+                                <option value="">- - Make Selection - -</option>
+                            </select>
+                        </li>
+                    </ol>
+                </td>
+
+            </tr>
+        </table>
+        <br />
+        <button type="submit" class="btn btn-primary" ng-click="onClick()" style="width: 100px;">
+            Check
+        </button>
+        <h3>Remaining words:{{wordsToShow}}!</h3>
+    </div>
+    <div ng-show="isFinish">
+        <h1 style="color: blue;">You are finished☺</h1>
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <a href="/">Back to home</a>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@using ActionMailer.Net
+@using ActionMailer.Net.Mvc
+@*@model 
+@{
+    Layout = null;
+}*@
+
+Welcome to My Cool Site, @*@System.Web.Security.Membership.*@
+
+We need you to verify your email.  Click this nifty link to get verified!
+
+@*@Url.AbsoluteAction("Verify", "Account", new { code = @Model.EmailActivationToken.ToString() })*@
+
+Thanks!

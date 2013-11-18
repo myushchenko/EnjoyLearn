@@ -1,0 +1,9 @@
+2013-07-12 20:20:54.4511|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:21:04.5139|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:21:17.3925|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:21:58.1357|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:22:46.7742|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:25:19.2782|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:27:30.1526|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:27:30.2197|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-07-12 20:28:24.3279|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute

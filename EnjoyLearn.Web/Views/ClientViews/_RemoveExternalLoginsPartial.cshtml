@@ -1,0 +1,105 @@
+﻿@using EnjoyLearn.Models.Authorize
+@{
+    List<ExternalLoginModel> externalLogins = new List<ExternalLoginModel>();
+    List<ExternalLoginModel> externalLoginsSecond = new List<ExternalLoginModel>();
+    if (Request.IsAuthenticated)
+    {
+        ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
+        var count = 0;
+        foreach (OAuthAccount account in accounts)
+        {
+            AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
+
+            if (count <= 4)
+            {
+                externalLogins.Add(new ExternalLoginModel
+                    {
+                        Provider = account.Provider,
+                        ProviderDisplayName = clientData.DisplayName,
+                        ProviderUserId = account.ProviderUserId,
+                        ExtraData = clientData.ExtraData
+                    });
+            }
+            else
+            {
+                externalLoginsSecond.Add(new ExternalLoginModel
+                    {
+                        Provider = account.Provider,
+                        ProviderDisplayName = clientData.DisplayName,
+                        ProviderUserId = account.ProviderUserId,
+                        ExtraData = clientData.ExtraData
+                    });
+            }
+            count++;
+        }
+
+        ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+    }
+}
+@if (externalLogins.Count > 0)
+{
+    <h3>Registered external logins</h3>
+ 
+    
+    <div class="social_login">
+        <span class="social_logi-wrap" style="background: transparent">
+            <table>
+                <tr>
+                    @foreach (ExternalLoginModel externalLogin in externalLogins)
+                    {
+                        <td>
+                            <button class="btn @externalLogin.ExtraData["social"]" type="submit" name="provider" value="@externalLogin.ProviderDisplayName"></button>
+                        </td>    
+                        <td>
+                            @if (ViewBag.ShowRemoveButton)
+                            {
+                                using (Html.BeginForm("Disassociate", "Home"))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("provider", externalLogin.Provider)
+                                    @Html.Hidden("providerUserId", externalLogin.ProviderUserId)
+
+                                    <input class="btn-link" type="submit" value="X" title="Remove this @externalLogin.ProviderDisplayName credential from your account"/>
+
+                                }
+                            }
+                            else
+                            {
+                                @: &nbsp;
+                            }
+                        </td>    
+                           
+                    }
+                </tr>
+                 <tr>
+                    @foreach (ExternalLoginModel externalLogin in externalLoginsSecond)
+                    {
+                        <td>
+                            <button class="btn @externalLogin.ExtraData["social"]" type="submit" name="provider" value="@externalLogin.ProviderDisplayName"></button>
+                        </td>    
+                        <td>
+                            @if (ViewBag.ShowRemoveButton)
+                            {
+                                using (Html.BeginForm("Disassociate", "Home"))
+                                {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("provider", externalLogin.Provider)
+                                @Html.Hidden("providerUserId", externalLogin.ProviderUserId)
+
+                                <input class="btn-link" type="submit" value="X" title="Remove this @externalLogin.ProviderDisplayName credential from your account"/>
+
+                                }
+                            }
+                            else
+                            {
+                                @: &nbsp;
+                                     }
+                        </td>    
+                           
+                    }
+                </tr>
+            </table>
+        </span>
+    </div>
+      
+}

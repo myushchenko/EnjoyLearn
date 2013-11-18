@@ -1,0 +1,6 @@
+2013-06-04 14:24:31.0722|INFO|EnjoyLearn.Web.MvcApplication|Application Start
+2013-06-04 14:24:31.2383|INFO|EnjoyLearn.Web.App_Start.PreStartApp|Application PreStart
+2013-06-04 14:24:31.2473|INFO|EnjoyLearn.Web.MvcApplication|Session Start
+2013-06-04 14:24:31.9388|INFO|EnjoyLearn.Web.MvcApplication|Application Error
+2013-06-04 14:25:04.4804|INFO|EnjoyLearn.Web.MvcApplication|Session End
+2013-06-04 14:25:04.4804|INFO|EnjoyLearn.Web.MvcApplication|Application End

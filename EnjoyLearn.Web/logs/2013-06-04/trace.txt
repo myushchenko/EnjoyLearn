@@ -1,0 +1,10 @@
+2013-06-04 14:50:02.2674|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 14:52:44.8747|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 14:59:09.5800|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 14:59:27.9321|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 14:59:29.5156|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 14:59:30.1311|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 15:03:21.4499|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 15:04:10.6489|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 15:04:48.8611|TRACE|NLog.Mvc.Logger|/Log/Index called
+2013-06-04 15:12:38.7260|TRACE|NLog.Mvc.Logger|/Log/Index called

@@ -1,0 +1,5 @@
+2013-06-19 14:29:26.9099|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-19 18:17:33.9757|ERROR|EnjoyLearn.Web.MvcApplication|Application_Start: 
+2013-06-19 20:18:50.2965|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-19 20:18:50.2965|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-19 20:19:27.8025|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute

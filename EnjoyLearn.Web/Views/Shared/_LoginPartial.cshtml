@@ -1,0 +1,22 @@
+﻿<div ng-controller="LoginController">
+    <a href="javascript:;" ng-click="myAccount()">
+        <i class="icon-user"></i>
+        {{myAccountTitle}}
+    </a>
+    <a href="javascript:;" ng-click="signOut()" ng-show="isUserSignedIn">Sign out</a>
+</div>
+
+@*@if (Request.IsAuthenticated) {
+    <div>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </div>
+} else {
+    <ul>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}*@

@@ -1,0 +1,1 @@
+2013-06-06 09:32:29.7017|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50AC56D0-8963-4163-AF05-C5D3FEE4B71E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnjoyLearn.Models</RootNamespace>
+    <AssemblyName>EnjoyLearn.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Mvc">
+      <HintPath>..\packages\NLog.Mvc.1.0.7\lib\net45\NLog.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authorize\ExternalLoginModel.cs" />
+    <Compile Include="Authorize\LocalPasswordModel.cs" />
+    <Compile Include="Authorize\LoginModel.cs" />
+    <Compile Include="Authorize\UserProfileModel.cs" />
+    <Compile Include="Authorize\RegisterExternalLoginModel.cs" />
+    <Compile Include="Authorize\RegisterModel.cs" />
+    <Compile Include="Authorize\UserModel.cs" />
+    <Compile Include="Chat\ChatMessageModel.cs" />
+    <Compile Include="Chat\PrivateChatMessageModel.cs" />
+    <Compile Include="Chat\UserChatConnectionModel.cs" />
+    <Compile Include="Interfaces\IPercentagePoints.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Rating\PointsModel.cs" />
+    <Compile Include="Rating\LevelModel.cs" />
+    <Compile Include="Rating\RanksNobilityModel.cs" />
+    <Compile Include="Tranings\BaseTraningModel.cs" />
+    <Compile Include="Tranings\TraningResultsModel.cs" />
+    <Compile Include="Tranings\PercentagePoints.cs" />
+    <Compile Include="Tranings\Words\ComposeWordsTraningModel.cs" />
+    <Compile Include="Tranings\Words\TraningResultModel.cs" />
+    <Compile Include="Tranings\Words\FourAnswersTraningModel.cs" />
+    <Compile Include="Tranings\Words\TrueOrFalseTraningModel.cs" />
+    <Compile Include="UserDictionaryModel.cs" />
+    <Compile Include="DictionaryModel.cs" />
+    <Compile Include="LogModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tranings\Grammar\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

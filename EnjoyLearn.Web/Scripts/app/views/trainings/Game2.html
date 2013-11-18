@@ -1,0 +1,50 @@
+<div class="container" ng-controller="Game2Controller">
+    <h1>{{name}}</h1>
+    <div ng-show="!isShow">
+        <h3>Would you like to tranning words by true or false?</h3>
+        <button type="submit" class="btn btn-primary" ng-click="onStart()" style="width: 300px;">
+            <span>Start Game</span>
+        </button>
+    </div>
+    <div ng-show="isShow">
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <table border="3" cellpadding="5" style="width: 400px; height: 300px">
+            <tr>
+                <td align="center">
+                    <center>
+                     <h1 style="color: blue">{{randomWordFirst.EnglishWord}}</h1></center>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <center> <h2 style="color: gold">{{randomWordFirst.TranscriptionWord}}</h2></center>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <center> <h2 style="color: yellowgreen">{{randomWordSecond.RussianWord}}</h2></center>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <center>
+                    <button type="submit" class="btn btn-danger" ng-click="onClick(false)" style="width: 100px;">
+                        <span>FALSE</span>
+                    </button>
+                     <button type="submit" class="btn btn-primary" ng-click="onClick(true)" style="width: 100px;">
+                         <span>TRUE</span>
+                     </button>
+                         </center>
+                </td>
+            </tr>
+        </table>
+        <h3>Remaining words:{{wordsToShow}}!</h3>
+    </div>
+    <div ng-show="isFinish">
+        <h1 style="color: blue;">You are finished☺</h1>
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <a href="/">Back to home</a>
+    </div>
+</div>

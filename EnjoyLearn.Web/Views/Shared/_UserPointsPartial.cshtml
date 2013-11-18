@@ -1,0 +1,19 @@
+﻿<div ng-controller="RatingController">
+    <div style="font-size: 14px;">
+        Your ranks nobility is
+        <span class="label label-info"> {{ranksNobilityName}}</span>!
+    </div>
+
+    <div style="position: relative; width: 360px;">
+        <div style="position: absolute; top: 0; left: 0; width: 80px; font-size: 14px;">
+            Level
+            <span class="badge badge-important">{{ratingLevelName}}</span>
+        </div>
+        <div class="progress" ng-show="isShow" style="position: absolute; top: 0; right: 0; width: 280px;">
+            <div class="bar bar-success" style="width: {{pointsProc}}%;">{{points}}</div>
+            <div class="bar" style="color: forestgreen; background-image: linear-gradient(to bottom, white, white); width: {{pointsInLevelProc}}%;">{{pointsToNextLevel}}</div>
+        </div>
+
+    </div>
+    
+</div>

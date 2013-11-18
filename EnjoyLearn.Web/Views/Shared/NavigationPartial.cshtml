@@ -1,0 +1,13 @@
+﻿@using EnjoyLearn.Web.Helpers
+<nav>
+    <ul class="sf-menu" id="nav">
+        @* <li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+        <li><a href=@Url.ClientUrl("/")><span data-i18n="_Home_"></span></a></li>
+        <li><a href=@Url.ClientUrl("/Vocabulary")><span data-i18n="_Vocabulary_"></span></a></li>
+        <li><a href=@Url.ClientUrl("/Trainings")><span data-i18n="_Trainings_"></span></a></li>
+        <li><a href=@Url.ClientUrl("/Dictionary")><span data-i18n="_Dictionary_"></span></a></li>
+        <li><a href=@Url.ClientUrl("/Chat      ")><span data-i18n="_Chat_"></span></a></li>
+        <li><a href=@Url.ClientUrl("/About")><span data-i18n="_About_"></span></a></li>
+        @* <li><a href=@Url.ClientUrl("/Contact")><span data-i18n="_Contact_"></span></a></li>*@
+    </ul>
+</nav>

@@ -1,0 +1,30 @@
+﻿@using EnjoyLearn.Web.Helpers
+<script type="text/ng-template" id="profile-dialog.html">
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true" title="close">&times;</button>
+    <h3>My Profile</h3>
+</div>
+<div class="modal-body">
+    <tabs>
+       <pane heading="Your profile info">
+             <div class="modal-section">
+                @Html.ClientView("ProfilePartial")
+            </div>
+        </pane> 
+        <pane heading="Your External Login account">
+             <div class="modal-section">
+                @Html.ClientView("RemoveExternalLoginsPartial")
+            </div>
+            <div class="modal-section">
+                @Html.ClientView("ExternalLoginsListPartial")
+            </div>
+        </pane> 
+        <pane heading="Change Password">
+            <div class="modal-section">
+                @Html.ClientView("ChangePassword")
+            </div>
+        </pane>
+    </tabs>
+</div>
+<div class="modal-footer"></div>
+</script>

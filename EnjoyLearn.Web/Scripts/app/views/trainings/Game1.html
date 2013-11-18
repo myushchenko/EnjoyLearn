@@ -1,0 +1,43 @@
+<!--<section ng-controller="HomeViewController">
+        <h1>{{page.heading}}</h1>
+        <p>This is the homepage...</p>
+    </section>-->
+<div class="container" ng-controller="Game1Controller">
+    <h1>{{name}}</h1>
+    <div ng-show="!isShow">
+        <h3>Would you like to tranning words from four variants?</h3>
+        <button type="submit" class="btn btn-primary" ng-click="onStart()" style="width: 300px;">
+            <span>Start Game</span>
+        </button>
+    </div>
+    <div ng-show="isShow">
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <table border="3" cellpadding="5">
+            <tr>
+                <td style="width: 350px;" align="center">
+                    <center> <h3 style="color: goldenrod">{{randomWord.RussianWord}}</h3>
+                   <h2 style="color:green">{{randomWord.TranscriptionWord}}</h2>
+                       </center>
+                </td>
+                <td align="center" valign="middle">
+                    <ol class="trans-list">
+                        <li ng-repeat="word in wordsToLearn" style="height: 35px;">
+                            <button type="submit" class="btn btn-primary" ng-click="onClick($index)" style="width: 250px; height: 30px;">
+                                <span>{{word.EnglishWord}}</span>
+                            </button>
+
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <h3>Remaining words:{{words.length}}!</h3>
+    </div>
+    <div ng-show="isFinish">
+        <h1 style="color: blue;">You are finished☺</h1>
+        <h3 style="color: green;">Correct answers: {{correctAnswers}}</h3>
+        <h3 style="color: red;">Incorrect answers: {{incorrectAnswers}}</h3>
+        <a href="/">Back to home</a>
+    </div>
+</div>

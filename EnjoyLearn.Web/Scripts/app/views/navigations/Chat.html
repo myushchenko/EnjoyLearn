@@ -1,0 +1,32 @@
+<section>
+
+    <div id="divContainer">
+
+        <div class="chatRoom">
+            <div class="title">
+                Welcome to Chat Room [<span>{{spanUser}}</span>]
+
+            </div>
+            <div class="content">
+                <div id="divChatWindow" class="chatWindow">
+                </div>
+                <!-- @* <div id="div1" class="chatWindow" ng-repeat="msg in messages">
+        
+                       <div class="message"><span class="userName">{{msg.userName }}</span>: {{msg.message }}</div>
+
+                   </div>*@-->
+                <div id="divusers" class="users">
+                </div>
+            </div>
+            <div class="messageBar">
+                <textarea class="textbox input-medium search-query" rows="4" cols="50" ng-model="txtMessage"> </textarea>
+                <input ng-click="btnSendMsg()" type="button" value="Send Message" class="btn btn-primary" style="width: 200px; height: 60px;" />
+            </div>
+        </div>
+
+        <input ng-model="hdId" type="hidden" />
+        <input ng-model="hdUserName" type="hidden" />
+    </div>
+
+</section>
+

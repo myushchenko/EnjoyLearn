@@ -1,0 +1,33 @@
+<div class="container" ng-controller="VocabularyController">
+    <h3>{{name}}</h3>
+
+    <div class="loader_div" ng-show="loading">
+        <img src="/Content/themes/theme1/images/ajax-loader.gif">
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="onAddNewWord()">
+        Add new word
+    </button>
+    <div class="smart-table-div" ng-show="!loading">
+        <smart-table class="table table-striped"
+            table-title="Smart Table example"
+            columns="columnCollection"
+            rows="rowCollection"
+            config="globalConfig">
+    </smart-table>
+
+    </div>
+
+    <!--    <table>
+        <tr>
+            <th>English Word</th>
+            <th>Transcription</th>
+            <th>Russian</th>
+        </tr>
+        <tr ng-repeat="word in words">
+            <td>{{word.EnglishWord}}</td>
+            <td>{{word.TranscriptionWord}}</td>
+             <td>{{word.RussianWord}}</td>
+        </tr>
+    </table>-->
+
+</div>

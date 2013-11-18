@@ -1,0 +1,5 @@
+2013-06-09 00:17:27.1318|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-09 00:20:19.6817|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-09 00:21:26.7947|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-09 18:13:13.9815|ERROR|NLog.Mvc.Logger|Unexpected error captured by NLogMvcHandleErrorAttribute
+2013-06-09 18:45:04.1319|WARN|NLog.Mvc.Logger|LearnWordController: dictionary is NULL 

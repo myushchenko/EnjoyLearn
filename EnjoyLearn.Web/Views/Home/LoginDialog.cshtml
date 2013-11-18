@@ -1,0 +1,35 @@
+@using EnjoyLearn.Web.Helpers
+<script type="text/ng-template" id="login-dialog.html">
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true" title="close">&times;</button>
+    <h3>My Account</h3>
+</div>
+<div class="modal-body">
+    <tabs>
+        <pane heading="Sign in">
+            <div class="modal-section">
+                @Html.ClientView("SignIn")
+            </div>  
+        </pane>
+        <pane heading="Sign up">
+            <div class="modal-section">
+                @Html.ClientView("SignUp")
+            </div>
+        </pane>
+    <pane heading="External Login">
+            <div class="modal-section">
+                @Html.ClientView("ExternalLoginsListPartial")
+            </div>
+        </pane>
+        <pane heading="Forgot Password">
+            <div class="modal-section">
+                @Html.ClientView("ForgotPassword")
+            </div>
+        </pane>
+    </tabs>
+</div>
+<div class="modal-footer"></div>
+</script>
+<!--
+ <button ng-click="close(result)" class="btn btn-primary">Close</button>
+ -->
